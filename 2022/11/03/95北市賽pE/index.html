@@ -10,7 +10,8 @@
 
     <!--Description-->
     
-        <meta name="description" content="105年 北市賽 pATIOJ 1419">
+        <meta name="description" content="95年 北市賽 pE
+TIOJ 1063">
     
 
     <!--Author-->
@@ -20,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="pA.飛天李晴(?)(sunny)"/>
+        <meta property="og:title" content="pE.最大矩形(Area)"/>
     
 
     <!--Open Graph Description-->
@@ -45,7 +46,7 @@
 
     <!-- Title -->
     
-    <title>pA.飛天李晴(?)(sunny) - ~~~94i87~~~</title>
+    <title>pE.最大矩形(Area) - ~~~94i87~~~</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -141,13 +142,13 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2022/11/02/105%E5%8C%97%E5%B8%82%E8%B3%BDpA/">
-                pA.飛天李晴(?)(sunny)
+            <a href="/2022/11/03/95%E5%8C%97%E5%B8%82%E8%B3%BDpE/">
+                pE.最大矩形(Area)
             </a>
         </h1>
         <div class="post-info">
             
-                <span class="date">2022-11-02</span>
+                <span class="date">2022-11-03</span>
             
             
             
@@ -160,12 +161,23 @@
         
 
         <!-- Post Content -->
-        <h1 id="105年-北市賽-pA"><a href="#105年-北市賽-pA" class="headerlink" title="105年 北市賽 pA"></a>105年 北市賽 pA</h1><h2 id="TIOJ-1419"><a href="#TIOJ-1419" class="headerlink" title="TIOJ 1419"></a><a target="_blank" rel="noopener" href="https://tioj.ck.tp.edu.tw/problems/1419">TIOJ 1419</a></h2><h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><span id="more"></span>
-<p>有難度的題目<span class="github-emoji" style="display:inline;vertical-align:middle"><span>😎</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60e.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>飛天桑妮是一隻能在樹木間移動的鼯鼠(?)<br>她居住的森林有$N$棵樹($\le 10^5$)，<br>每棵樹$X_i$,$Y_i$($\le 10^4$)和$H_i$($\le 10^5$)為座標及該樹高度<br>桑妮的家位於$(0,0)$，而桑妮的奶奶家位於的位置$(10000,10000)$<br>每次從較高的樹跳到較低的樹，即可使出滑翔絕技(?)，享受樂趣<br>樂趣值為該次旅行中的所有樂趣的最大值<br>每次的樂趣為較高的樹減較低的樹的數值，最低為 $0$<br>需求出旅行最大的樂趣值<br>(需經過起點和終點)，且每次飛行的樹會距離起點越來越遠，不能回頭 </p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>由於是計算最大值，其實只要經過合法範圍最高的樹和最低的即可<br>基本上就是要求出兩數 $a,b$，滿足 $\sqrt{X_a^2+Y_a^2} \le \sqrt{X_b^2+Y_b^2}$，使得高度差$H_b-H_a$ 為最大<br>使用掃描線演算法，由近到遠依序計算<br>複雜度 $O(nlogn)$</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">"Ofast,unroll-loops,no-stack-protector,fast-math"</span>)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">T</span>{</span><br><span class="line">    <span class="type">int</span> x,y,h; </span><br><span class="line">};</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(T a,T b)</span></span>{</span><br><span class="line">    <span class="type">int</span> p=a.x*a.x+a.y*a.y,q=b.x*b.x+b.y*b.y;</span><br><span class="line">    <span class="keyword">if</span> (p==q) <span class="keyword">return</span> a.h&gt;b.h;</span><br><span class="line">    <span class="keyword">return</span> p&lt;q;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span>** argv)</span></span>{</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    T tree[t];</span><br><span class="line">    multiset&lt;<span class="type">int</span>&gt; minh;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;t;i++){</span><br><span class="line">        cin &gt;&gt; tree[i].x &gt;&gt; tree[i].y &gt;&gt; tree[i].h;</span><br><span class="line">        minh.<span class="built_in">insert</span>(tree[i].h);</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">sort</span>(tree,tree+t,cmp);</span><br><span class="line">    <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;t;i++){</span><br><span class="line">        ans=<span class="built_in">max</span>(ans,tree[i].h-*minh.<span class="built_in">begin</span>());</span><br><span class="line">        minh.<span class="built_in">erase</span>(minh.<span class="built_in">find</span>(tree[i].h));</span><br><span class="line">    }</span><br><span class="line">    cout &lt;&lt; ans;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="color-lime-AC-0-1s-9mb"><a href="#color-lime-AC-0-1s-9mb" class="headerlink" title="$\color{lime}{AC}$ ( 0.1s , 9mb )"></a>$\color{lime}{AC}$ ( 0.1s , 9mb )</h3>
+        <h1>95年 北市賽 pE</h1>
+<h2 id="TIOJ-1063"><a target="_blank" rel="noopener" href="https://tioj.ck.tp.edu.tw/problems/1063">TIOJ 1063</a></h2>
+<h2 id=""></h2>
+<span id="more"></span>
+<p>這題有夠難 <span class="github-emoji" style="display:inline;vertical-align:middle"><span>😵</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f635.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<h2 id="Discription">Discription</h2>
+<p>輸入一個 $m \times n$的二維矩陣區域，$0$代表該處有障礙物，$1$代表為空地<br>
+假設每個子區域面積皆為$1$，請求出最大的矩陣面積，且該區域內無障礙物</p>
+<h2 id="Solution">Solution</h2>
+<p>由於不能選取$0$的區域，列一般的$dp$轉移式有一定難度<br>
+不如換個角度思考:</p>
+<h6 id="既然不能選-0-，那不如直接把-0-的區域設為很小的負數，再計算二維-LCS-就好了">既然不能選$0$，那不如直接把$0$的區域設為很小的負數，再計算二維$LCS$就好了?</h6>
+<p>如此一來就簡單多了 <span class="github-emoji" style="display:inline;vertical-align:middle"><span>😋</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60b.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<h2 id="Code">Code</h2>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">"Ofast,unroll-loops,no-stack-protector,fast-math"</span>)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">2e2</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> arr[N][N],dp[N][N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span>** argv)</span></span>{</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> n,m;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;m;j++){</span><br><span class="line">            cin &gt;&gt; arr[i][j];</span><br><span class="line">            <span class="keyword">if</span> (!arr[i][j]) arr[i][j]=<span class="number">-40000</span>;  <span class="comment">// 設為負數</span></span><br><span class="line">            dp[i][j]=dp[i<span class="number">-1</span>][j]+arr[i][j];</span><br><span class="line">        }</span><br><span class="line">    <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=n;i++){</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=i+<span class="number">1</span>;j&lt;=n;j++){</span><br><span class="line">            <span class="type">int</span> psum=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;m;k++){</span><br><span class="line">                psum+=dp[j][k]-dp[i][k];</span><br><span class="line">                <span class="keyword">if</span> (psum&lt;<span class="number">0</span>) psum=<span class="number">0</span>;</span><br><span class="line">                ans=<span class="built_in">max</span>(ans,psum);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    cout &lt;&lt; ans;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="color-lime-AC-12ms-3mb">$\color{lime}{AC}$ ( 12ms , 3mb )</h3>
+
     </div>
 
     
@@ -173,7 +185,7 @@
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/北市賽/">#北市賽</a> <a href="/tags/105-北市賽/">#105-北市賽</a>
+            <a href="/tags/北市賽/">#北市賽</a> <a href="/tags/95-北市賽/">#95-北市賽</a>
         </div>
     
 
