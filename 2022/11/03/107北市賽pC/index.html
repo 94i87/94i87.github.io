@@ -10,7 +10,8 @@
 
     <!--Description-->
     
-        <meta name="description" content="107年 北市賽 pCTIOJ 2181">
+        <meta name="description" content="107年 北市賽 pC
+TIOJ 2181">
     
 
     <!--Author-->
@@ -20,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="pC.表演節目 (Show)"/>
+        <meta property="og:title" content="107-pC.表演節目 (Show)"/>
     
 
     <!--Open Graph Description-->
@@ -45,7 +46,7 @@
 
     <!-- Title -->
     
-    <title>pC.表演節目 (Show) - ~~~94i87~~~</title>
+    <title>107-pC.表演節目 (Show) - ~~~94i87~~~</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -142,7 +143,7 @@
     <div class="post-header">
         <h1 class="title">
             <a href="/2022/11/03/107%E5%8C%97%E5%B8%82%E8%B3%BDpC/">
-                pC.表演節目 (Show)
+                107-pC.表演節目 (Show)
             </a>
         </h1>
         <div class="post-info">
@@ -160,12 +161,28 @@
         
 
         <!-- Post Content -->
-        <h1 id="107年-北市賽-pC"><a href="#107年-北市賽-pC" class="headerlink" title="107年 北市賽 pC"></a>107年 北市賽 pC</h1><h2 id="TIOJ-2181"><a href="#TIOJ-2181" class="headerlink" title="TIOJ 2181"></a><a target="_blank" rel="noopener" href="https://tioj.ck.tp.edu.tw/problems/2181">TIOJ 2181</a></h2><h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><span id="more"></span>
+        <h1>107年 北市賽 pC</h1>
+<h2 id="TIOJ-2181"><a target="_blank" rel="noopener" href="https://tioj.ck.tp.edu.tw/problems/2181">TIOJ 2181</a></h2>
+<h2 id=""></h2>
+<span id="more"></span>
 <p>超簡單題<span class="github-emoji" style="display:inline;vertical-align:middle"><span>😌</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60c.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
-<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription"></a>Discription</h2><p>資訊能力競賽頒獎典禮將安排一定數量以上的社團進行表演。小朱是這次活動的總策劃，由於臺北市有許多優秀的表演社團，他蒐集過去社團表演的數據，初步篩選出具有高人氣指標的社團，以及該表演的演出費用。請計算在不超過表演總預算的前提下，可邀請表演的社團組合中，社團人氣指標總和最高為多少，並計算其表演所需總費用。<br>輸入兩數a, N,分別代表「表演總預算 a 千元」$(5 ≤ a ≤ 1000)$,<br>以及「可被邀請進行表演之社團數量 N」$(1 ≤ N ≤ 1000)$。第$2$至第$N+1$行,分別<br>列出社團編號$1$至$N$相關資訊,每一行有兩個以空白為間隔的正整數,分別為該社團表演<br>的人氣指標 $x (1 ≤ x ≤ 100)$ 及演出費用 $y$ 千元 $(1 ≤ y ≤ 100)$。</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>基本上就是標準的$01knapsack$問題<br>只是再額外紀錄花費<br>$dp$轉移式 $dp[j]=max(dp[j],dp[j-y]+x)$，其中$j$代表該預算能獲得的最大表演酬勞，$x$代表人氣指標，$y$代表演出費用<br>這裡使用滾動$dp$來記錄數值<br>記得可能有多個最大人氣指標總和，這裡需要求出最小的成本<br>這裡題目沒寫，害我直接吃了一個$WA$<span class="github-emoji" style="display:inline;vertical-align:middle"><span>🙄</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f644.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">"Ofast,unroll-loops,no-stack-protector,fast-math"</span>)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1e3</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> dp[N],cost[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span>** argv)</span></span>{</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> a,n;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++){</span><br><span class="line">        <span class="type">int</span> x,y;</span><br><span class="line">        cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=a;j&gt;=y;j--){</span><br><span class="line">            <span class="keyword">if</span> (dp[j-y]+x&gt;dp[j]){</span><br><span class="line">                dp[j]=dp[j-y]+x;</span><br><span class="line">                cost[j]=cost[j-y]+y;</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (dp[j-y]+x==dp[j]){</span><br><span class="line">                cost[j]=<span class="built_in">min</span>(cost[j],cost[j-y]+y);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    cout &lt;&lt; dp[a] &lt;&lt; <span class="string">' '</span> &lt;&lt; cost[a];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="color-lime-AC-4ms-3mb"><a href="#color-lime-AC-4ms-3mb" class="headerlink" title="$\color{lime}{AC}$ ( 4ms , 3mb )"></a>$\color{lime}{AC}$ ( 4ms , 3mb )</h3>
+<h2 id="Discription">Discription</h2>
+<p>資訊能力競賽頒獎典禮將安排一定數量以上的社團進行表演。小朱是這次活動的總策劃，由於臺北市有許多優秀的表演社團，他蒐集過去社團表演的數據，初步篩選出具有高人氣指標的社團，以及該表演的演出費用。請計算在不超過表演總預算的前提下，可邀請表演的社團組合中，社團人氣指標總和最高為多少，並計算其表演所需總費用。<br>
+輸入兩數a, N,分別代表「表演總預算 a 千元」$(5 ≤ a ≤ 1000)$,<br>
+以及「可被邀請進行表演之社團數量 N」$(1 ≤ N ≤ 1000)$。第$2$至第$N+1$行,分別<br>
+列出社團編號$1$至$N$相關資訊,每一行有兩個以空白為間隔的正整數,分別為該社團表演<br>
+的人氣指標 $x (1 ≤ x ≤ 100)$ 及演出費用 $y$ 千元 $(1 ≤ y ≤ 100)$。</p>
+<h2 id="Solution">Solution</h2>
+<p>基本上就是標準的$01knapsack$問題<br>
+只是再額外紀錄花費<br>
+$dp$轉移式 $dp[j]=max(dp[j],dp[j-y]+x)$，其中$j$代表該預算能獲得的最大表演酬勞，$x$代表人氣指標，$y$代表演出費用<br>
+這裡使用滾動$dp$來記錄數值<br>
+記得可能有多個最大人氣指標總和，這裡需要求出最小的成本<br>
+這裡題目沒寫，害我直接吃了一個$WA$<span class="github-emoji" style="display:inline;vertical-align:middle"><span>🙄</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f644.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<h2 id="Code">Code</h2>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">"Ofast,unroll-loops,no-stack-protector,fast-math"</span>)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1e3</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> dp[N],cost[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span>** argv)</span></span>{</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> a,n;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++){</span><br><span class="line">        <span class="type">int</span> x,y;</span><br><span class="line">        cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=a;j&gt;=y;j--){</span><br><span class="line">            <span class="keyword">if</span> (dp[j-y]+x&gt;dp[j]){</span><br><span class="line">                dp[j]=dp[j-y]+x;</span><br><span class="line">                cost[j]=cost[j-y]+y;</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (dp[j-y]+x==dp[j]){</span><br><span class="line">                cost[j]=<span class="built_in">min</span>(cost[j],cost[j-y]+y);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    cout &lt;&lt; dp[a] &lt;&lt; <span class="string">' '</span> &lt;&lt; cost[a];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="color-lime-AC-4ms-3mb">$\color{lime}{AC}$ ( 4ms , 3mb )</h3>
+
     </div>
 
     
@@ -207,19 +224,19 @@
         <ul>
             
             <li>
-                <a class="footer-post" href="/2022/11/03/107%E5%8C%97%E5%B8%82%E8%B3%BDpC/">pC.表演節目 (Show)</a>
+                <a class="footer-post" href="/2022/11/03/107%E5%8C%97%E5%B8%82%E8%B3%BDpC/">107-pC.表演節目 (Show)</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2022/11/03/107%E5%8C%97%E5%B8%82%E8%B3%BDpD/">pD.幸運表格</a>
+                <a class="footer-post" href="/2022/11/03/107%E5%8C%97%E5%B8%82%E8%B3%BDpD/">107-pD.幸運表格</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2022/11/03/95%E5%8C%97%E5%B8%82%E8%B3%BDpE/">pE.最大矩形(Area)</a>
+                <a class="footer-post" href="/2022/11/03/95%E5%8C%97%E5%B8%82%E8%B3%BDpE/">95-pE.最大矩形(Area)</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2022/11/02/105%E5%8C%97%E5%B8%82%E8%B3%BDpA/">pA.飛天李晴(?)(sunny)</a>
+                <a class="footer-post" href="/2022/11/02/105%E5%8C%97%E5%B8%82%E8%B3%BDpA/">105-pA.飛天李晴(?)(sunny)</a>
             </li>
             
         </ul>

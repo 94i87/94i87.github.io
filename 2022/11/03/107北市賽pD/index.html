@@ -10,7 +10,8 @@
 
     <!--Description-->
     
-        <meta name="description" content="107 北市賽 pDTIOJ 2182">
+        <meta name="description" content="107 北市賽 pD
+TIOJ 2182">
     
 
     <!--Author-->
@@ -20,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="pD.幸運表格"/>
+        <meta property="og:title" content="107-pD.幸運表格"/>
     
 
     <!--Open Graph Description-->
@@ -45,7 +46,7 @@
 
     <!-- Title -->
     
-    <title>pD.幸運表格 - ~~~94i87~~~</title>
+    <title>107-pD.幸運表格 - ~~~94i87~~~</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -142,7 +143,7 @@
     <div class="post-header">
         <h1 class="title">
             <a href="/2022/11/03/107%E5%8C%97%E5%B8%82%E8%B3%BDpD/">
-                pD.幸運表格
+                107-pD.幸運表格
             </a>
         </h1>
         <div class="post-info">
@@ -160,18 +161,32 @@
         
 
         <!-- Post Content -->
-        <h1 id="107-北市賽-pD"><a href="#107-北市賽-pD" class="headerlink" title="107 北市賽 pD"></a>107 北市賽 pD</h1><h2 id="TIOJ-2182"><a href="#TIOJ-2182" class="headerlink" title="TIOJ 2182"></a><a target="_blank" rel="noopener" href="https://tioj.ck.tp.edu.tw/problems/2182">TIOJ 2182</a></h2><h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><span id="more"></span>
+        <h1>107 北市賽 pD</h1>
+<h2 id="TIOJ-2182"><a target="_blank" rel="noopener" href="https://tioj.ck.tp.edu.tw/problems/2182">TIOJ 2182</a></h2>
+<h2 id=""></h2>
+<span id="more"></span>
 <p>easy~~~</p>
-<h2 id="Discription"><a href="#Discription" class="headerlink" title="Discription"></a>Discription</h2><p>給定一個$m(5 &lt; m \le 1000) \times n(5 &lt; n \le 1000)$ 的表格，每一個格子都被預先填入一個整數<br>可以任意選擇一個點當作起點，每次只能往右或往下移動，直到超出表格為止</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h4 id="dp-轉移式"><a href="#dp-轉移式" class="headerlink" title="$dp$ 轉移式:"></a>$dp$ 轉移式:</h4><p>令$dp(i,j)$為以該點為終點的最大路徑<br>$x=max(dp[i-1][j],dp[i][j-1])$(左邊與上面的格子)</p>
-<script type="math/tex; mode=display">
-dp[i][j]=
-\begin{cases}
-dp[i][j] &if \ x < 0 \\\\
-dp[i][j]+x &otherwise
-\end{cases}</script><h2 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h2><p>由於可以任意選擇起始表格，因此如果左方和右方皆小於0則可直接拋棄，並選擇該點為起點<br><strong><em>最後再尋找在邊界上的最大值 (很重要，路徑需經過邊界) </em></strong></p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">"Ofast,unroll-loops,no-stack-protector,fast-math"</span>)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1e3</span>+<span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> dp[N][N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span>** argv)</span></span>{</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> n,m;</span><br><span class="line">    cin &gt;&gt; m &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++){</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;j++) cin &gt;&gt; dp[i][j];</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++){</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;j++){</span><br><span class="line">            dp[i][j]=<span class="built_in">max</span>(dp[i][j],dp[i][j]+<span class="built_in">max</span>(dp[i<span class="number">-1</span>][j],dp[i][j<span class="number">-1</span>]));</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="type">int</span> ans=INT_MIN;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++) ans=<span class="built_in">max</span>(ans,dp[i][n]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;j++) ans=<span class="built_in">max</span>(ans,dp[m][j]);</span><br><span class="line">    cout &lt;&lt; ans;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="color-lime-AC-60ms-7mb"><a href="#color-lime-AC-60ms-7mb" class="headerlink" title="$\color{lime}{AC}$ ( 60ms , 7mb )"></a>$\color{lime}{AC}$ ( 60ms , 7mb )</h3>
+<h2 id="Discription">Discription</h2>
+<p>給定一個$m(5 &lt; m \le 1000) \times n(5 &lt; n \le 1000)$ 的表格，每一個格子都被預先填入一個整數<br>
+可以任意選擇一個點當作起點，每次只能往右或往下移動，直到超出表格為止</p>
+<h2 id="Solution">Solution</h2>
+<h4 id="dp-轉移式">$dp$ 轉移式:</h4>
+<p>令$dp(i,j)$為以該點為終點的最大路徑<br>
+$x=max(dp[i-1][j],dp[i][j-1])$(左邊與上面的格子)<br>
+$$<br>
+dp[i][j]=<br>
+\begin{cases}<br>
+dp[i][j] &amp;if \ x &lt; 0 \\<br>
+dp[i][j]+x &amp;otherwise<br>
+\end{cases}<br>
+$$</p>
+<h2 id="-2"></h2>
+<p>由於可以任意選擇起始表格，因此如果左方和右方皆小於0則可直接拋棄，並選擇該點為起點<br>
+***最後再尋找在邊界上的最大值 (很重要，路徑需經過邊界) ***</p>
+<h2 id="Code">Code</h2>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">"Ofast,unroll-loops,no-stack-protector,fast-math"</span>)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1e3</span>+<span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> dp[N][N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span>** argv)</span></span>{</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> n,m;</span><br><span class="line">    cin &gt;&gt; m &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++){</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;j++) cin &gt;&gt; dp[i][j];</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++){</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;j++){</span><br><span class="line">            dp[i][j]=<span class="built_in">max</span>(dp[i][j],dp[i][j]+<span class="built_in">max</span>(dp[i<span class="number">-1</span>][j],dp[i][j<span class="number">-1</span>]));</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="type">int</span> ans=INT_MIN;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++) ans=<span class="built_in">max</span>(ans,dp[i][n]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;j++) ans=<span class="built_in">max</span>(ans,dp[m][j]);</span><br><span class="line">    cout &lt;&lt; ans;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="color-lime-AC-60ms-7mb">$\color{lime}{AC}$ ( 60ms , 7mb )</h3>
+
     </div>
 
     
@@ -213,19 +228,19 @@ dp[i][j]+x &otherwise
         <ul>
             
             <li>
-                <a class="footer-post" href="/2022/11/03/107%E5%8C%97%E5%B8%82%E8%B3%BDpC/">pC.表演節目 (Show)</a>
+                <a class="footer-post" href="/2022/11/03/107%E5%8C%97%E5%B8%82%E8%B3%BDpC/">107-pC.表演節目 (Show)</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2022/11/03/107%E5%8C%97%E5%B8%82%E8%B3%BDpD/">pD.幸運表格</a>
+                <a class="footer-post" href="/2022/11/03/107%E5%8C%97%E5%B8%82%E8%B3%BDpD/">107-pD.幸運表格</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2022/11/03/95%E5%8C%97%E5%B8%82%E8%B3%BDpE/">pE.最大矩形(Area)</a>
+                <a class="footer-post" href="/2022/11/03/95%E5%8C%97%E5%B8%82%E8%B3%BDpE/">95-pE.最大矩形(Area)</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2022/11/02/105%E5%8C%97%E5%B8%82%E8%B3%BDpA/">pA.飛天李晴(?)(sunny)</a>
+                <a class="footer-post" href="/2022/11/02/105%E5%8C%97%E5%B8%82%E8%B3%BDpA/">105-pA.飛天李晴(?)(sunny)</a>
             </li>
             
         </ul>
