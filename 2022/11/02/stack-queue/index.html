@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="stack &amp; queue"/>
+        <meta property="og:title" content="資結基礎介紹(高一必修)"/>
     
 
     <!--Open Graph Description-->
@@ -45,7 +45,7 @@
 
     <!-- Title -->
     
-    <title>stack &amp; queue - ~~~94i87~~~</title>
+    <title>資結基礎介紹(高一必修) - ~~~94i87~~~</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -142,7 +142,7 @@
     <div class="post-header">
         <h1 class="title">
             <a href="/2022/11/02/stack-queue/">
-                stack & queue
+                資結基礎介紹(高一必修)
             </a>
         </h1>
         <div class="post-info">
@@ -160,23 +160,24 @@
         
 
         <!-- Post Content -->
-        <h2 id="Introduce">Introduce</h2>
-<span id="more"></span>
-<p>stack 是一種FILO(first in,last out)的資料結構，類似於堆盤子，每次只插入/刪除頂端的值<br>
-$c++$ 的內建STL可直接使用，不需要刻那麼長的模板</p>
-<h2 id="以下為代碼範例-stack">以下為代碼範例(stack)</h2>
-<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">stack&lt;type&gt; name;   <span class="comment">// 宣告一個stack，type可為數字或字元等 ex. stack&lt;int&gt; num;</span></span><br><span class="line">name.<span class="built_in">push</span>(type);    <span class="comment">// 推入一個數值</span></span><br><span class="line">cout &lt;&lt; name.<span class="built_in">top</span>(); <span class="comment">// 讀取最上方的值</span></span><br><span class="line">name.<span class="built_in">pop</span>();         <span class="comment">// 移除最上方的值</span></span><br><span class="line"><span class="keyword">if</span> (name.<span class="built_in">empty</span>());  <span class="comment">// 判斷stack是否為空</span></span><br><span class="line">cout &lt;&lt; name.<span class="built_in">size</span>();<span class="comment">// 輸出stack大小</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="應用">應用</h2>
-<p>stack的應用非常廣泛，從DFS,編譯器判斷括號到反向輸出都有</p>
-<h2 id="Introduce-2">Introduce</h2>
-<p>queue是一種FIFO(first in,first out)的資料結構，類似於排隊，每次由後方插入，前方取出<br>
-和stack一樣，STL皆有支援</p>
-<h2 id="範例-queue">範例(queue)</h2>
-<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">queue&lt;type&gt; name;   <span class="comment">// 宣告一個queue，type可為數字或字元等 ex. queue&lt;int&gt; num;</span></span><br><span class="line">name.<span class="built_in">push</span>(type);    <span class="comment">// 從後方推入一個數值</span></span><br><span class="line">cout &lt;&lt; name.<span class="built_in">front</span>();<span class="comment">// 讀取最前方的值</span></span><br><span class="line">name.<span class="built_in">pop</span>();         <span class="comment">// 移除最前方的值</span></span><br><span class="line"><span class="keyword">if</span> (name.<span class="built_in">empty</span>());  <span class="comment">// 判斷queue是否為空</span></span><br><span class="line">cout &lt;&lt; name.<span class="built_in">size</span>();<span class="comment">// 輸出queue大小</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="應用-2">應用</h2>
-<p>queue的應用也很廣泛，BFS,topological sort,sweep-line等圖論演算法皆會用到</p>
-<h2 id="教學影片連結">教學影片連結</h2>
-<h4 id="我從來沒看過-很爛的話別怪我-upside-down-face-upside-down-face">我從來沒看過 很爛的話別怪我<a target="_blank" rel="noopener" href="https://reurl.cc/VX0klR"><span class="github-emoji" style="display:inline;vertical-align:middle"><span>🙃</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f643.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji" style="display:inline;vertical-align:middle"><span>🙃</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f643.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></a></h4>
+        <h2 id="Introduce"><a href="#Introduce" class="headerlink" title="Introduce"></a>Introduce</h2><span id="more"></span>
+<p>stack 是一種FILO(first in,last out)的資料結構，類似於堆盤子，每次只插入/刪除頂端的值<br>$c++$ 的內建STL可直接使用，不需要刻那麼長的模板</p>
+<h2 id="以下為代碼範例-stack"><a href="#以下為代碼範例-stack" class="headerlink" title="以下為代碼範例(stack)"></a>以下為代碼範例(stack)</h2><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">stack&lt;type&gt; name;   <span class="comment">// 宣告一個stack，type可為數字或字元等 ex. stack&lt;int&gt; num;</span></span><br><span class="line">name.<span class="built_in">push</span>(type);    <span class="comment">// 推入一個數值</span></span><br><span class="line">cout &lt;&lt; name.<span class="built_in">top</span>(); <span class="comment">// 讀取最上方的值</span></span><br><span class="line">name.<span class="built_in">pop</span>();         <span class="comment">// 移除最上方的值</span></span><br><span class="line"><span class="keyword">if</span> (name.<span class="built_in">empty</span>());  <span class="comment">// 判斷stack是否為空</span></span><br><span class="line">cout &lt;&lt; name.<span class="built_in">size</span>();<span class="comment">// 輸出stack大小</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="應用"><a href="#應用" class="headerlink" title="應用"></a>應用</h2><p>stack的應用非常廣泛，從DFS,編譯器判斷括號到反向輸出都有</p>
+<h2 id="Introduce-1"><a href="#Introduce-1" class="headerlink" title="Introduce"></a>Introduce</h2><p>queue是一種FIFO(first in,first out)的資料結構，類似於排隊，每次由後方插入，前方取出<br>和stack一樣，STL皆有支援</p>
+<h2 id="範例-queue"><a href="#範例-queue" class="headerlink" title="範例(queue)"></a>範例(queue)</h2><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">queue&lt;type&gt; name;   <span class="comment">// 宣告一個queue，type可為數字或字元等 ex. queue&lt;int&gt; num;</span></span><br><span class="line">name.<span class="built_in">push</span>(type);    <span class="comment">// 從後方推入一個數值</span></span><br><span class="line">cout &lt;&lt; name.<span class="built_in">front</span>();<span class="comment">// 讀取最前方的值</span></span><br><span class="line">name.<span class="built_in">pop</span>();         <span class="comment">// 移除最前方的值</span></span><br><span class="line"><span class="keyword">if</span> (name.<span class="built_in">empty</span>());  <span class="comment">// 判斷queue是否為空</span></span><br><span class="line">cout &lt;&lt; name.<span class="built_in">size</span>();<span class="comment">// 輸出queue大小</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="應用-1"><a href="#應用-1" class="headerlink" title="應用"></a>應用</h2><p>queue的應用也很廣泛，BFS,topological sort,sweep-line等圖論演算法皆會用到</p>
+<h2 id="教學影片連結"><a href="#教學影片連結" class="headerlink" title="教學影片連結"></a>教學影片連結</h2><h4 id="我從來沒看過-很爛的話別怪我-upside-down-face-upside-down-face"><a href="#我從來沒看過-很爛的話別怪我-upside-down-face-upside-down-face" class="headerlink" title="我從來沒看過 很爛的話別怪我:upside_down_face::upside_down_face:"></a>我從來沒看過 很爛的話別怪我<a target="_blank" rel="noopener" href="https://reurl.cc/VX0klR"><span class="github-emoji" style="display:inline;vertical-align:middle"><span>🙃</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f643.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji" style="display:inline;vertical-align:middle"><span>🙃</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f643.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></a></h4><h2 id="Introduce-2"><a href="#Introduce-2" class="headerlink" title="Introduce"></a>Introduce</h2><p>Linked List 是一種特殊的資料結構，類似於圖論中的有向簡單圖(directed simple path)</p>
+<h2 id="範例-Linked-List"><a href="#範例-Linked-List" class="headerlink" title="範例(Linked List)"></a>範例(Linked List)</h2><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>{</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    node *l,*r;</span><br><span class="line">    <span class="built_in">node</span>(<span class="type">int</span> v=<span class="number">0</span>):<span class="built_in">val</span>(v){}</span><br><span class="line">    <span class="built_in">node</span>(node *l,node *r):<span class="built_in">l</span>(l),<span class="built_in">r</span>(r);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="應用-2"><a href="#應用-2" class="headerlink" title="應用"></a>應用</h2><p>由於圖論鄰接串列(adjacent list)的存在，Linked List的實用性大幅降低，但仍可在特殊的地方中使用</p>
+<h2 id="Introduce-3"><a href="#Introduce-3" class="headerlink" title="Introduce"></a>Introduce</h2><p>以下介紹一些相較有效率的排序方法</p>
+<ul>
+<li>1.counting sort<br>在數字範圍小且數字數量龐大時適合使用<br>複雜度$O(N)$</li>
+<li>2.merge sort<br>合併排序，為經典的分治基礎算法<br>每次將陣列分成一半，依序排序後再將其合併，複雜度$O(NlogN)$<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> num[<span class="number">500</span>];</span><br><span class="line"><span class="built_in">sort</span>(num,num+<span class="number">500</span>); <span class="comment">// merge sort STL用法</span></span><br><span class="line"><span class="comment">//counting sort</span></span><br><span class="line"><span class="type">int</span> cnt[<span class="number">1000</span>]</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;num.<span class="built_in">size</span>();i++) cnt[num[i]]++;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">1000</span>;i++){</span><br><span class="line">    <span class="keyword">if</span> (!cnt[i]) cout &lt;&lt; cnt[i];</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Introduce-4"><a href="#Introduce-4" class="headerlink" title="Introduce"></a>Introduce</h2>搜尋為一非常重要的算法，以下介紹基礎的搜尋方式</li>
+<li>1.linear search(線性搜)<br>依序遍歷所有位置，複雜度$O(N)$</li>
+<li>2.</li>
+</ul>
 
     </div>
 
@@ -214,19 +215,19 @@ $c++$ 的內建STL可直接使用，不需要刻那麼長的模板</p>
         <ul>
             
             <li>
+                <a class="footer-post" href="/2023/01/15/IOI-2007-pairs/">IOI-2007-Pairs 題解</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2023/01/07/IOI-2013-Dreaming-%E9%A1%8C%E8%A7%A3/">IOI 2013 Dreaming 題解</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2022/11/09/111%E5%8C%97%E5%B8%82%E8%B3%BD/">111北市賽 歷程</a>
+                <a class="footer-post" href="/2022/11/09/111%E5%8C%97%E5%B8%82%E8%B3%BD/">111北市賽 心得</a>
             </li>
             
             <li>
                 <a class="footer-post" href="/2022/11/04/95%E5%8C%97%E5%B8%82%E8%B3%BD/">95北市賽 題解</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2022/11/03/107%E5%8C%97%E5%B8%82%E8%B3%BD/">107 北市賽 題解</a>
             </li>
             
         </ul>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="IOI-2007-Pairs 題解"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="~~~94i87~~~"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    
+        <meta name="twitter:card" content="summary" />
+    
+    
+    
+
+    <!-- Title -->
+    
+    <title>IOI-2007-Pairs 題解 - ~~~94i87~~~</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2023/01/15/IOI-2007-pairs/">
+                IOI-2007-Pairs 題解
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2023-01-15</span>
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1></h1>
+<span id="more"></span>
+<h2 id="TIOJ-1345"><a target="_blank" rel="noopener" href="https://tioj.ck.tp.edu.tw/problems/1345">TIOJ 1345</a></h2>
+<h2 id=""></h2>
+<h2 id="這次想得比較快-大概只花3小時XD">這次想得比較快 大概只花3小時XD</h2>
+<h2 id="Description">Description</h2>
+<p>馬可 (Mirko) 和史拉可 (Slavko) 在玩動物玩具。首先，他們先從如下圖的三種遊戲盤面中選擇一種盤面類型。<br>
+盤面上佈滿了一維、二維、或三維的細格（在圖中以圓圈代表之）。</p>
+<h4 id="以下圖省略"><em>以下圖省略</em></h4>
+<p>接著馬可將$N$個動物玩具擺放到細格上。<br>
+兩個細格之間的距離定義為動物玩具從其中一格移動到另一細格的最少步驟。<br>
+在每一步驟，一個動物玩具可移到與其相鄰（在上圖中以線段連接）的細格。<br>
+有趣的是，這些玩具會發出叫聲，（仙女龍?!）(啊ˊˊ啊ˋˋ)<br>
+若兩個動物玩具的距離不超過$D$時，他們就可互相聽到對方的叫聲。<br>
+史拉可的目標如下：計算有多少組$(pair)$的動物玩具可以聽到互相的叫聲。<br>
+請寫一個程式，當給定一種盤面、動物玩具的位置、及數字$D$時，計算出符合上述條件的組數。</p>
+<h2 id="Solution">Solution</h2>
+<p>對於所有三種盤面，分別用不同的解法</p>
+<h4 id="一維">一維</h4>
+<p>基本上只要讀入陣列，排序後二分搜即可</p>
+<h4 id="二維">二維</h4>
+<p>這裡假設前面的座標$(a,b)$，當前座標$(x,y)$，最大曼哈頓距離$D$<br>
+則可列出所求 $|x-a|+|y-b|\leq D$<br>
+假設 $a\le x$<br>
+移項可得 $x \pm y \leq a \pm b+d$<br>
+只要判斷加減號是否皆正確即可<br>
+將$x-y$排序，並使用 $BIT$ 來實作，記得陣列要開兩倍</p>
+<h4 id="三維">三維</h4>
+<p>這個超級麻煩 <span class="github-emoji" style="display:inline;vertical-align:middle"><span>🤣</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f923.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><br>
+一樣假設前面座標 $(a,b,c)$，當前座標 $(x,y,z)$<br>
+所求為 $|x-a|+|y-b|+|z-c| \leq D$<br>
+一樣設 $a\le x$<br>
+移項 $x \pm y \pm z \leq a \pm b \pm c+d$<br>
+而這次總共有 $4$ 總組合，每個皆須判斷<br>
+因此開一個三維的 $BIT$ 來計算<br>
+這邊先將所有值加上 $75$，否則會有小於$0$的情況<br>
+將$x-y-z$排序，剩下的丟入 $BIT$ 中即可<br>
+而至於如何計算(集合互斥)<br>
+總共有 $2^3=8$ 總組合，$x+y+z$ 和 $x-y-z$ 一定是加回去的<br>
+剩下的就是 $C_2^8=28$種組合啦 多試一下就過了XD</p>
+<h2 id="Code">Code</h2>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">"Ofast,unroll-loops,no-stack-protector,fast-math"</span>)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> pi pair<span class="string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> tp tuple<span class="string">&lt;int,int,int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> se second</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> mn(a) min(225LL,a)</span></span><br><span class="line"><span class="type">int</span> b,n,d,m;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> NN=<span class="number">7.5e4</span>+<span class="number">10</span>,NNN=<span class="number">230</span>;</span><br><span class="line"><span class="type">int</span> c[NN&lt;&lt;<span class="number">1</span>],cc[NNN][NNN][NNN];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add2</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> d)</span></span>{</span><br><span class="line">    <span class="keyword">while</span>(x&lt;=m*<span class="number">2</span>){</span><br><span class="line">        c[x]+=d;</span><br><span class="line">        x+=x&amp;-x;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">cnt2</span><span class="params">(<span class="type">int</span> x)</span></span>{</span><br><span class="line">    <span class="type">int</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(x&gt;<span class="number">0</span>){</span><br><span class="line">        sum+=c[x];</span><br><span class="line">        x-=x&amp;-x;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add3</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y,<span class="type">int</span> z,<span class="type">int</span> d)</span></span>{</span><br><span class="line">    <span class="keyword">while</span>(x&lt;=NNN<span class="number">-5</span>){</span><br><span class="line">        <span class="type">int</span> r=y;</span><br><span class="line">        <span class="keyword">while</span>(r&lt;=NNN<span class="number">-5</span>){</span><br><span class="line">            <span class="type">int</span> rr=z;</span><br><span class="line">            <span class="keyword">while</span>(rr&lt;=NNN<span class="number">-5</span>){</span><br><span class="line">                cc[x][r][rr]+=d;</span><br><span class="line">                rr+=rr&amp;-rr;</span><br><span class="line">            }</span><br><span class="line">            r+=r&amp;-r;</span><br><span class="line">        }</span><br><span class="line">        x+=x&amp;-x;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">cnt3</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y,<span class="type">int</span> z)</span></span>{</span><br><span class="line">    <span class="type">int</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(x&gt;<span class="number">0</span>){</span><br><span class="line">        <span class="type">int</span> r=y;</span><br><span class="line">        <span class="keyword">while</span>(r&gt;<span class="number">0</span>){</span><br><span class="line">            <span class="type">int</span> rr=z;</span><br><span class="line">            <span class="keyword">while</span>(rr&gt;<span class="number">0</span>){</span><br><span class="line">                sum+=cc[x][r][rr];</span><br><span class="line">                rr-=rr&amp;-rr;</span><br><span class="line">            }</span><br><span class="line">            r-=r&amp;-r;</span><br><span class="line">        }</span><br><span class="line">        x-=x&amp;-x;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (b==<span class="number">1</span>){</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; x;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>,j;i&lt;n &amp;&amp; cin &gt;&gt; j;i++) x.<span class="built_in">pb</span>(j);</span><br><span class="line">        <span class="built_in">sort</span>(x.<span class="built_in">begin</span>(),x.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++){</span><br><span class="line">            <span class="type">int</span> it=<span class="built_in">lower_bound</span>(x.<span class="built_in">begin</span>(),x.<span class="built_in">end</span>(),x[i]-d)-x.<span class="built_in">begin</span>();</span><br><span class="line">            ans+=i-it;</span><br><span class="line">        }</span><br><span class="line">        cout &lt;&lt; ans &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">if</span> (b==<span class="number">2</span>){</span><br><span class="line">        vector&lt;pi&gt; xy;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>,j,k;i&lt;n &amp;&amp; cin &gt;&gt; j &gt;&gt; k;i++) xy.<span class="built_in">pb</span>({j-k,j+k});</span><br><span class="line">        <span class="built_in">sort</span>(xy.<span class="built_in">begin</span>(),xy.<span class="built_in">end</span>());</span><br><span class="line">        queue&lt;pi&gt; q;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> e:xy){</span><br><span class="line">            <span class="keyword">while</span>(!q.<span class="built_in">empty</span>() &amp;&amp; q.<span class="built_in">front</span>().fi&lt;e.fi-d) {<span class="built_in">add2</span>(q.<span class="built_in">front</span>().se,<span class="number">-1</span>);q.<span class="built_in">pop</span>();}</span><br><span class="line">            ans+=<span class="built_in">cnt2</span>(<span class="built_in">min</span>(m*<span class="number">2</span>+<span class="number">1</span>,e.se+d))-<span class="built_in">cnt2</span>(e.se-d<span class="number">-1</span>);</span><br><span class="line">            <span class="built_in">add2</span>(e.se,<span class="number">1</span>);</span><br><span class="line">            q.<span class="built_in">push</span>(e);</span><br><span class="line">        }</span><br><span class="line">        cout &lt;&lt; ans &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">if</span> (b==<span class="number">3</span>){</span><br><span class="line">        vector&lt;tp&gt; xyz;</span><br><span class="line">        <span class="type">int</span> i,j,k,l,ii,jj,kk,ll;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n &amp;&amp; cin &gt;&gt; j &gt;&gt; k &gt;&gt; l;i++) xyz.<span class="built_in">pb</span>({j-k-l,j-k+l+<span class="number">75</span>,j+k-l+<span class="number">75</span>,j+k+l});</span><br><span class="line">        <span class="built_in">sort</span>(xyz.<span class="built_in">begin</span>(),xyz.<span class="built_in">end</span>());</span><br><span class="line">        queue&lt;tp&gt; q;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> e:xyz){</span><br><span class="line">            <span class="built_in">tie</span>(i,j,k,l)=e;</span><br><span class="line">            <span class="keyword">while</span>(!q.<span class="built_in">empty</span>()){</span><br><span class="line">                <span class="built_in">tie</span>(ii,jj,kk,ll)=q.<span class="built_in">front</span>();</span><br><span class="line">                <span class="keyword">if</span> (ii&lt;i-d) {<span class="built_in">add3</span>(jj,kk,ll,<span class="number">-1</span>);q.<span class="built_in">pop</span>();}</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line">            ans+=<span class="built_in">cnt3</span>(<span class="built_in">mn</span>(j+d),<span class="built_in">mn</span>(k+d),<span class="built_in">mn</span>(l+d));</span><br><span class="line">            ans-=<span class="built_in">cnt3</span>(<span class="built_in">mn</span>(j+d),<span class="built_in">mn</span>(k+d),<span class="built_in">mn</span>(l-d<span class="number">-1</span>));</span><br><span class="line">            ans-=<span class="built_in">cnt3</span>(<span class="built_in">mn</span>(j+d),<span class="built_in">mn</span>(k-d<span class="number">-1</span>),<span class="built_in">mn</span>(l+d));</span><br><span class="line">            ans+=<span class="built_in">cnt3</span>(<span class="built_in">mn</span>(j+d),<span class="built_in">mn</span>(k-d<span class="number">-1</span>),<span class="built_in">mn</span>(l-d<span class="number">-1</span>));</span><br><span class="line">            ans-=<span class="built_in">cnt3</span>(<span class="built_in">mn</span>(j-d<span class="number">-1</span>),<span class="built_in">mn</span>(k+d),<span class="built_in">mn</span>(l+d));</span><br><span class="line">            ans+=<span class="built_in">cnt3</span>(<span class="built_in">mn</span>(j-d<span class="number">-1</span>),<span class="built_in">mn</span>(k+d),<span class="built_in">mn</span>(l-d<span class="number">-1</span>));</span><br><span class="line">            ans-=<span class="built_in">cnt3</span>(<span class="built_in">mn</span>(j-d<span class="number">-1</span>),<span class="built_in">mn</span>(k-d<span class="number">-1</span>),<span class="built_in">mn</span>(l+d));</span><br><span class="line">            ans+=<span class="built_in">cnt3</span>(<span class="built_in">mn</span>(j-d<span class="number">-1</span>),<span class="built_in">mn</span>(k-d<span class="number">-1</span>),<span class="built_in">mn</span>(l-d<span class="number">-1</span>));</span><br><span class="line">            <span class="built_in">add3</span>(j,k,l,<span class="number">1</span>);</span><br><span class="line">            q.<span class="built_in">push</span>(e);</span><br><span class="line">        }</span><br><span class="line">        cout &lt;&lt; ans &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">(<span class="type">signed</span> argc,<span class="type">char</span>** argv)</span></span>{</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    cin &gt;&gt; b &gt;&gt; n &gt;&gt; d &gt;&gt; m;</span><br><span class="line">    <span class="built_in">solve</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="color-lime-AC-2-2s-52mb">$\color{lime}{AC}$ ( 2.2s , 52mb )</h3>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/IOI/">#IOI</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a target="_blank" rel="noopener" href="https://github.com/klugjo">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2023/01/15/IOI-2007-pairs/">IOI-2007-Pairs 題解</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2023/01/07/IOI-2013-Dreaming-%E9%A1%8C%E8%A7%A3/">IOI 2013 Dreaming 題解</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2022/11/09/111%E5%8C%97%E5%B8%82%E8%B3%BD/">111北市賽 心得</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2022/11/04/95%E5%8C%97%E5%B8%82%E8%B3%BD/">95北市賽 題解</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://github.com/94i87/94i87.github.io">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://twitter.com/jaredsu0719">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=100028154176074">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://www.instagram.com/zlbc20._.su/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://telegram.org/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-telegram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:jaredsu0719@gmail.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a target="_blank" rel="noopener" href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+
+</html>
