@@ -160,20 +160,110 @@
         
 
         <!-- Post Content -->
-        <h1 id=""><a href="#" class="headerlink" title=" "></a> </h1><span id="more"></span> 
-<p>仔細一想，發現已經離初選將近半年了<br>這段時間沒特別去回想<br>不過是時候面對地獄了QAQ</p>
-<h3 id="PRE-START"><a href="#PRE-START" class="headerlink" title="PRE-START"></a>PRE-START</h3><p>這次初選辦在了三月初，剛好前一個禮拜遇上連假<br>心想這是難得的機會，於是跟學校請了一整個禮拜<br>，總共兩個禮拜<br>然而過了一個禮拜我發現這樣練習壓力實在太大，<br>於是剩下的時間就拿來耍廢了<br>還能順便思考初選完的事情。<br>你沒看錯，這時的我認為發揮全力的話是絕對能進去的<br>把cses刷的精熟，TIOJ考古題幾乎都寫過，怎麼可能進不去呢XD<br>題外話，這幾天還看了6本小說，生活非常的輕鬆，<br>甚至以為是在暑假XD<br>結果考試前一天超緊張，幾乎完全睡不著<br>早知道買個助眠藥的QQ</p>
-<h3 id="START"><a href="#START" class="headerlink" title="START"></a>START</h3><p>早上很早就起床，趕快的把IOI講義再複習一遍<br>CPH也整個翻過<br>午餐吃個清淡一點，以防恐怖的突發事件來襲<br>出門前再帶個巧克力，想說血壓低可以補一下<br>路程全程放著花の塔來放鬆心情(順便推坑一下XD)</p>
-<h2 id="花の塔"><a href="#花の塔" class="headerlink" title="花の塔"></a><a target="_blank" rel="noopener" href="https://youtu.be/Rwzy6Qt8gq8">花の塔</a></h2><h3 id="TIME-START-0-00"><a href="#TIME-START-0-00" class="headerlink" title="TIME START! 0:00"></a>TIME START! 0:00</h3><p>這次花了約15分鐘看題(主要是後面看不懂XD)<br>pA 怪題 複雜度有夠高 可以先撈子題(結果是簽到題XD)<br>pB 運氣衰到一個極致 彷彿這輩子再也沒有壞事(這樣好像不錯XDD)<br>大數配上二分搜 我這輩子最不會的題目<br>pC 圖論題，$N$ 點 $M$ 邊，而且 $M=N$ or $M=N-1$ 感覺需要拆開寫<br>pD 什麼詭異構造字串，連配分都莫名其妙 直接封住不寫<br>pE 看起來是 $BCC+dijkstra$ 的奇怪題目</p>
-<h3 id="0-20-pt-100"><a href="#0-20-pt-100" class="headerlink" title="0:20 pt:100"></a>0:20 pt:100</h3><p>pA 莫名其妙整題過，好扯<br>看來又是師大在搞 笑死<br>接下來先拿pC子題(樹的部分)</p>
-<h3 id="0-50-pt-123"><a href="#0-50-pt-123" class="headerlink" title="0:50 pt:123"></a>0:50 pt:123</h3><p>先把子題拿下來了<br>不過 $M=N-1$ 狀況很特殊，一直找不到解法<br>寫了一次唬爛看看</p>
-<h3 id="1-20-pt-123"><a href="#1-20-pt-123" class="headerlink" title="1:20 pt:123"></a>1:20 pt:123</h3><p>看起來還有要找的特性<br>先去寫看看pE的 $Dijkstra+BCC$ 好了</p>
-<h3 id="1-55-pt-123"><a href="#1-55-pt-123" class="headerlink" title="1:55 pt:123"></a>1:55 pt:123</h3><p>時間越來越少 開始緊張了<br>而各位都知道 人一旦慌張 會整個亂掉<br>寫 $BCC$ 時一直卡BUG 最後發現<br></p><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> u:adj[v]) </span><br></pre></td></tr></tbody></table></figure><br>後面沒加 $if (u!=p) $ 究竟在幹嘛<br>然後那句諺語又來了 屋漏偏逢連夜雨<br>鍵盤的空白鍵開始不聽話 連按幾次才按的出來<br>逐漸地在消磨我的耐心<p></p>
-<h3 id="2-10-pt-123"><a href="#2-10-pt-123" class="headerlink" title="2:10 pt:123"></a>2:10 pt:123</h3><p>範測過了後上傳 結果WA 0???<br>火氣差點上來，急忙去廁所冷靜<br>洗完臉後突然想到有巧克力可以吃，馬上拿出來<br>結果因為教室比較熱 再加上放在口袋 整個直接融化<br>還吃得滿手都是 這時怒氣值已經來到紅線了 感覺隨時會炸<br>稍微冷靜下來後，決定先繼續看 pB 沒找到的特性<br>不是吧不是吧 你真的以為可以在這種情況找到嗎<br>最後還是成了笑話 什麼都做不了</p>
-<h3 id="2-30-pt-123"><a href="#2-30-pt-123" class="headerlink" title="2:30 pt:123"></a>2:30 pt:123</h3><p>這時我意識到一件事<br>那就是只有pE可能成功<br>這滿分拿下應該很有機會吧<br>於是開始尋找BUG和問題</p>
-<h3 id="2-55-pt-123"><a href="#2-55-pt-123" class="headerlink" title="2:55 pt:123"></a>2:55 pt:123</h3><p>在最後的五分鐘 發現到了最小值計算方式錯了<br>這時用我的”黃金右手”瘋狂打字 以一個手指WPM25的風速疾馳<br>範例測資 對了 自製的小測資 對了<br>按下最後的Submit鍵<br>做了人生第一次認真的祈禱(乞討XD)<br>張開眼睛的那瞬間<del>~</del>~~</p>
-<h3 id="3-00-FINAL-pt-123"><a href="#3-00-FINAL-pt-123" class="headerlink" title="3:00 FINAL pt:123"></a>3:00 FINAL pt:123</h3><p>一切都結束了<br>高二的初選全滅 而且還死得極為悽慘<br>當時只能憤而離開校園<br>極大壓抑對自己無能的憤怒 以及落選的不甘心與懊悔<br>我甚至已經忘記當時如何到家的<br>俗話說 時間是最好的良藥<br>直到5月以前 我絲毫不碰電腦 只整天泡在悲憤的情緒中<br>打打遊戲 看看小說 到學校假裝開心的跟朋友聊天<br>一回到了孤獨 就彷彿回到國小的我 對未來沒有任何期待<br>只有滿滿的自責 滿滿的悔恨 滿滿的空虛<br>直到我看見了一部漫畫(又來推銷了你 ==#)<br>也就是一拳超人<br>在充滿著黑暗及偽裝的社會生存<br>C級英雄第一 那個不管被擊倒多少次 都會從新站起的英雄<br>讓我思考到 別人滿身傷都能靠意志撐起了<br>你這點失敗究竟算什麼小玩意兒?<br>這段期間也體驗到了競程對我來說有多麼重要<br>彷彿少了摯愛般 做什麼都不起勁<br>講了那麼多廢話 該總結了啦喂<br>快要比某個艾莉的後記還長了耶<br>沒事 多練一點耐心也好<br>什麼? 你說還不夠過癮?<br>那就期待高三的心得篇啦XD<br>最後放個 $dashboard$</p>
-<h3 id="Rank-83"><a href="#Rank-83" class="headerlink" title="$Rank:83$"></a>$Rank:83$</h3><h3 id="Point-123"><a href="#Point-123" class="headerlink" title="$Point:123$"></a>$Point:123$</h3><p><img src="/images/TOI2023.jpg" alt=""></p>
+        <h1></h1>
+<span id="more"></span> 
+<p>仔細一想，發現已經離初選將近半年了<br>
+這段時間沒特別去回想<br>
+不過是時候面對地獄了QAQ</p>
+<h3 id="PRE-START">PRE-START</h3>
+<p>這次初選辦在了三月初，剛好前一個禮拜遇上連假<br>
+心想這是難得的機會，於是跟學校請了一整個禮拜<br>
+，總共兩個禮拜<br>
+然而過了一個禮拜我發現這樣練習壓力實在太大，<br>
+於是剩下的時間就拿來耍廢了<br>
+還能順便思考初選完的事情。<br>
+你沒看錯，這時的我認為發揮全力的話是絕對能進去的<br>
+把cses刷的精熟，TIOJ考古題幾乎都寫過，怎麼可能進不去呢XD<br>
+題外話，這幾天還看了6本小說，生活非常的輕鬆，<br>
+甚至以為是在暑假XD<br>
+結果考試前一天超緊張，幾乎完全睡不著<br>
+早知道買個助眠藥的QQ</p>
+<h3 id="START">START</h3>
+<p>早上很早就起床，趕快的把IOIC講義再複習一遍<br>
+CPH也整個翻過<br>
+午餐吃個清淡一點，以防恐怖的突發事件來襲<br>
+出門前再帶個巧克力，想說血壓低可以補一下<br>
+路程全程放著花の塔來放鬆心情(順便推坑一下XD)</p>
+<h2 id="花の塔"><a target="_blank" rel="noopener" href="https://youtu.be/Rwzy6Qt8gq8">花の塔</a></h2>
+<h3 id="TIME-START-0-00">TIME START! 0:00</h3>
+<p>這次花了約15分鐘看題(主要是後面看不懂XD)<br>
+$pA$ 怪題 複雜度有夠高 可以先撈子題(結果是簽到題XD)<br>
+$pB$ 運氣衰到一個極致 彷彿這輩子再也沒有壞事(這樣好像不錯XDD)<br>
+大數配上二分搜 我這輩子最不會的題目<br>
+$pC$ 圖論題，$N$ 點 $M$ 邊，而且 $M=N$ or $M=N-1$ 感覺需要拆開寫<br>
+$pD$ 什麼詭異構造字串，連配分都莫名其妙 直接封住不寫<br>
+$pE$ 看起來是 $BCC+dijkstra$ 的奇怪題目</p>
+<h3 id="0-20-pt-100">0:20 pt:100</h3>
+<p>$pA$ 莫名其妙整題過，好扯<br>
+看來又是師大在搞 笑死<br>
+接下來先拿pC子題(樹的部分)</p>
+<h3 id="0-50-pt-123">0:50 pt:123</h3>
+<p>先把子題拿下來了<br>
+不過 $M=N-1$ 狀況很特殊，一直找不到解法<br>
+寫了一次唬爛看看</p>
+<h3 id="1-20-pt-123">1:20 pt:123</h3>
+<p>看起來還有要找的特性<br>
+先去寫看看pE的 $Dijkstra+BCC$ 好了</p>
+<h3 id="1-55-pt-123">1:55 pt:123</h3>
+<p>時間越來越少 開始緊張了<br>
+而各位都知道 人一旦慌張 會整個亂掉<br>
+寫 $BCC$ 時一直卡BUG 最後發現</p>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> u:adj[v]) </span><br></pre></td></tr></tbody></table></figure>
+<p>後面沒加 $if (u!=p) $ 究竟在幹嘛<br>
+然後那句諺語又來了 屋漏偏逢連夜雨<br>
+鍵盤的空白鍵開始不聽話 連按幾次才按的出來<br>
+逐漸地在消磨我的耐心</p>
+<h3 id="2-10-pt-123">2:10 pt:123</h3>
+<p>範測過了後上傳 結果 $WA$ 0???<br>
+火氣差點上來，急忙去廁所冷靜<br>
+洗完臉後突然想到有巧克力可以吃，馬上拿出來<br>
+結果因為教室比較熱 再加上放在口袋 整個直接融化<br>
+還吃得滿手都是 這時怒氣值已經來到紅線了 感覺隨時會炸 <span class="github-emoji" style="display:inline;vertical-align:middle"><span>😡</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f621.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><br>
+稍微冷靜下來後，決定先繼續看 pB 沒找到的特性<br>
+不對阿 真的以為可以在這種情況找到嗎<br>
+最後還是成了笑話 什麼都做不了</p>
+<h3 id="2-30-pt-123">2:30 pt:123</h3>
+<p>這時我意識到一件事<br>
+那就是只有拿滿 $pE$ 才可能成功進選訓<br>
+這滿分拿下應該很有機會吧<br>
+於是開始尋找BUG和問題</p>
+<h3 id="2-55-pt-123">2:55 pt:123</h3>
+<p>在最後的五分鐘 發現到了最小值計算方式錯了<br>
+這時用我的"黃金右手"瘋狂打字 以一個手指 $WPM25$ 的風速疾馳<br>
+範例測資 對了 自製的小測資 對了<br>
+按下最後的Submit鍵<br>
+做了人生第一次認真的祈禱(乞討XD)<br>
+張開眼睛的那瞬間~~~~~~~</p>
+<h3 id="3-00-FINAL-pt-123">3:00 FINAL pt:123</h3>
+<p>一切都結束了<br>
+高二的初選一蹋糊塗 而且還死得極為悽慘<br>
+當時只能憤而離開<br>
+極大壓抑對自己無能的憤怒 以及落選的不甘心與懊悔<br>
+我甚至已經忘記當時如何到家的<br>
+俗話說 時間是最好的良藥<br>
+直到5月以前 我絲毫不碰電腦 只整天泡在悲憤的情緒中<br>
+打打遊戲 看看小說 到學校假裝沒事 開心的跟朋友聊天<br>
+一回到了孤獨 就彷彿回到了以前 對未來沒有任何期待<br>
+只有滿滿的自責 滿滿的悔恨 滿滿的空虛<br>
+直到我看見了一道曙光(漫畫?)(又來推銷了你 <span class="github-emoji" style="display:inline;vertical-align:middle"><span>😑</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f611.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>)<br>
+在充滿著黑暗及偽裝的社會生存<br>
+C級英雄第一 那個不管被擊倒多少次 都會從新站起的英雄-無證騎士<br>
+讓我思考到 別人滿身傷都能靠意志撐起了<br>
+這點失敗究竟算什麼小玩意?<br>
+這段期間也體驗到了競程對我來說有多麼重要<br>
+彷彿少了摯愛般 做什麼都不起勁<br>
+俗話說的好 成功的後面是無限的努力和堅忍的精神<br>
+吃了一點苦 難道要放棄了嗎?<br>
+講了那麼多廢話 該總結了啦喂<br>
+快要比某個艾莉的後記還長了耶-by 責任編輯(?)<br>
+沒事 多練一點耐心也好<br>
+看這點小廢話稱不上痛苦啦 <span class="github-emoji" style="display:inline;vertical-align:middle"><span>😏</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><br>
+什麼? 你說還不夠過癮?<br>
+那就期待高三的心得篇啦XD<br>
+最後放個 $dashboard$</p>
+<h3 id="Rank-83">$Rank:83$</h3>
+<h3 id="Point-123">$Point:123$</h3>
+<p><img src="/images/TOI2023.jpg" alt=""></p>
 
     </div>
 
